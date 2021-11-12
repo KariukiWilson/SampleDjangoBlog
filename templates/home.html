@@ -1,0 +1,17 @@
+<!-- Link to Extends Base.html -->
+{% extends 'base.html' %}
+
+<!-- Intention: To list all blog post from the database. -->
+
+{% block content %}
+    {% for post in object_list %}
+
+        <div class="post-entry">
+            <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
+            <p>{{ post.content }}</p>
+        </div>
+
+    {% endfor %}
+
+
+{% endblock content %}
